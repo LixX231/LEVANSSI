@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: #111;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+/* Шапка */
+.header {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Контейнер навигации */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Левая и правая части меню */
+.nav-left,
+.nav-right {
+  display: flex;
+  gap: 45px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Ссылки */
+.nav a {
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  transition: opacity 0.3s;
+}
+
+.nav a:hover {
+  opacity: 0.6;
+}
+
+/* Логотип по центру */
+.logo-container {
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Увеличенный логотип */
+.logo {
+  height: 85px; /* раньше было 60px */
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+
+/* ===== HERO SECTION ===== */
+.hero {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 140px 20px;
+  background-color: #f9f9f9;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero-content {
+  max-width: 700px;
+  animation: slideUp 1s ease-out;
+}
+
+.hero-logo {
+  width: 200px; /* или чуть больше, подрастим */
+  margin-bottom: 30px;
+}
+
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.8rem;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: 0.5px;
+  margin-bottom: 18px;
+}
+
+.hero-subtitle {
+  color: #444;
+  font-size: 1.05rem;
+  margin-bottom: 40px;
+  letter-spacing: 0.3px;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #111;
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #333;
+  transform: translateY(-3px);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-top: 1px solid #e6e6e6;
+  font-size: 0.9rem;
+  color: #666;
+  letter-spacing: 0.3px;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
