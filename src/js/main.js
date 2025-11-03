@@ -1,3 +1,3 @@
-import "./styles/style.css";
-import "./js/header.js";
-import "./js/footer.js";
+import '../styles/style.css';
+import './header.js';
+import "./footer.js";
