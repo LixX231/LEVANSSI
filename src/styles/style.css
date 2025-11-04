@@ -1,33 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@500&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap');
 
 body {
-  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #f8f8f8;
   color: #111;
-  background-color: #fff;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  font-family: "Inter", sans-serif;
 }
 
-/* ===== HEADER ===== */
 /* Шапка */
 .header {
   width: 100%;
   background-color: #fff;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #eaeaea;
   padding: 20px 0;
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-/* Контейнер навигации */
 .nav {
   display: flex;
   align-items: center;
@@ -37,131 +27,166 @@ body {
   margin: 0 auto;
 }
 
-/* Левая и правая части меню */
 .nav-left,
 .nav-right {
   display: flex;
-  gap: 45px;
+  gap: 40px;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-/* Ссылки */
 .nav a {
   text-decoration: none;
   color: #111;
   font-weight: 500;
   font-size: 14px;
-  letter-spacing: 0.6px;
   text-transform: uppercase;
-  transition: opacity 0.3s;
+  letter-spacing: 0.6px;
+  transition: color 0.3s ease;
 }
 
 .nav a:hover {
-  opacity: 0.6;
+  color: #777;
 }
 
-/* Логотип по центру */
-.logo-container {
-  flex: 0 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Увеличенный логотип */
+/* Центрированный логотип */
 .logo {
-  height: 85px; /* раньше было 60px */
-  object-fit: contain;
-  transition: transform 0.4s ease;
+  font-family: "Playfair Display", serif;
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: #111;
 }
 
-.logo:hover {
-  transform: scale(1.05);
-}
-
-
-/* ===== HERO SECTION ===== */
+/* Баннер */
 .hero {
-  flex: 1;
+  background: url('banner.jpg') center/cover no-repeat;
+  height: 85vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 140px 20px;
-  background-color: #f9f9f9;
-  animation: fadeIn 1.2s ease-in-out;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(2px);
 }
 
 .hero-content {
-  max-width: 700px;
-  animation: slideUp 1s ease-out;
+  position: relative;
+  text-align: center;
+  z-index: 2;
 }
 
 .hero-logo {
-  width: 200px; /* или чуть больше, подрастим */
-  margin-bottom: 30px;
+   width: 240px;  /* было 180–200px, теперь крупнее и выразительнее */
+  max-width: 30vw; /* чтобы не выходил за рамки экрана на маленьких дисплеях */
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: none; /* убираем серость, если вдруг осталась */
+  padding: 40px 0 35px;
+  text-align: center;
 }
 
-
-.hero-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.8rem;
-  font-weight: 500;
-  color: #111;
-  letter-spacing: 0.5px;
-  margin-bottom: 18px;
+.hero-text {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  margin-bottom: 25px;
+  color: #222;
 }
 
-.hero-subtitle {
-  color: #444;
-  font-size: 1.05rem;
-  margin-bottom: 40px;
-  letter-spacing: 0.3px;
-}
-
-.btn {
-  display: inline-block;
-  background-color: #111;
-  color: #fff;
-  padding: 14px 40px;
-  border-radius: 30px;
+.hero-btn {
   text-decoration: none;
+  color: #111;
+  border: 1px solid #111;
+  padding: 12px 32px;
+  border-radius: 50px;
   font-weight: 500;
-  letter-spacing: 0.6px;
   transition: all 0.3s ease;
 }
 
-.btn:hover {
-  background-color: #333;
-  transform: translateY(-3px);
+.hero-btn:hover {
+  background: #111;
+  color: #fff;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  text-align: center;
-  padding: 40px 20px;
-  background-color: #fff;
-  border-top: 1px solid #e6e6e6;
-  font-size: 0.9rem;
-  color: #666;
-  letter-spacing: 0.3px;
+/* Футер */
+.footer {
+  background: #fff;
+  border-top: 1px solid #eaeaea;
+  color: #555;
+  padding: 50px 0 30px;
+  font-size: 14px;
 }
 
-/* ===== ANIMATIONS ===== */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+.footer-content {
+  width: 85%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
-@keyframes slideUp {
-  from {
-    transform: translateY(30px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
+.footer-left h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 20px;
+  color: #111;
+  margin-bottom: 8px;
+}
+
+.footer-left p {
+  color: #777;
+}
+
+.socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px; /* немного меньше, чтобы иконки сплотились визуально */
+  margin-top: 8px;
+}
+
+.socials a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;   /* задаём единый “контейнер” для всех иконок */
+  height: 28px;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.socials a:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* Все иконки — выравнивание и цвет */
+.socials img {
+  display: block;
+  width: 22px;
+  height: 22px;
+  filter: brightness(0);
+  object-fit: contain;
+}
+
+/* VK — чуть увеличен и центрирован */
+.socials a[href*="vk.com"] img {
+  height: 50px;
+  width: 45px;
+  margin-left: -2px; /* сдвигаем левее, чтобы центр совпал */
+}
+
+
+.footer-right p {
+  font-size: 13px;
+  color: #999;
+  margin-top: 12px;
 }
